@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="text-teal-500 font-bold underline">{{ msg }}</h1>
     <h3>
       My first app with Vue and Tailwind!
     </h3>
