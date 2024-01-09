@@ -1,49 +1,49 @@
 <script setup lang="ts">
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+  import { ref } from 'vue';
+
+  import TodoItem from './TodoItem.vue'
+  import CheckIcon from './icons/IconCheck.vue'
+
+  // STATES
+  let newTodoText = ref('');
+
+  // EVENTS
+  function addTodo() {
+    console.log(`Now I should add ${newTodoText.value}`);
+
+    newTodoText.value = '';
+  }
 </script>
 
 <template>
-  <WelcomeItem>
+  <div class="add-todo">
+    <input v-model="newTodoText">
+    <button @click="addTodo">+</button>
+  </div>
+
+  <TodoItem>
     <template #icon>
-      <DocumentationIcon />
+      <CheckIcon />
     </template>
     <template #heading>Documentation</template>
 
     Vue’s
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
     provides you with all information you need to get started.
-  </WelcomeItem>
+  </TodoItem>
 
-  <WelcomeItem>
+  <TodoItem>
     <template #icon>
-      <ToolingIcon />
+      <CheckIcon />
     </template>
     <template #heading>Tooling</template>
 
-    This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
-
-    <br />
-
     More instructions are available in <code>README.md</code>.
-  </WelcomeItem>
+  </TodoItem>
 
-  <WelcomeItem>
+  <TodoItem>
     <template #icon>
-      <EcosystemIcon />
+      <CheckIcon />
     </template>
     <template #heading>Ecosystem</template>
 
@@ -55,11 +55,11 @@ import SupportIcon from './icons/IconSupport.vue'
     you need more resources, we suggest paying
     <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">Awesome Vue</a>
     a visit.
-  </WelcomeItem>
+  </TodoItem>
 
-  <WelcomeItem>
+  <TodoItem>
     <template #icon>
-      <CommunityIcon />
+      <CheckIcon />
     </template>
     <template #heading>Community</template>
 
@@ -73,16 +73,23 @@ import SupportIcon from './icons/IconSupport.vue'
     the official
     <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">@vuejs</a>
     twitter account for latest news in the Vue world.
-  </WelcomeItem>
+  </TodoItem>
 
-  <WelcomeItem>
+  <TodoItem>
     <template #icon>
-      <SupportIcon />
+      <CheckIcon />
     </template>
     <template #heading>Support Vue</template>
 
     As an independent project, Vue relies on community backing for its sustainability. You can help
     us by
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
-  </WelcomeItem>
+  </TodoItem>
 </template>
+
+<style>
+  .add-todo {
+    display: flex;
+    margin: 20px 20px 20px -25px;
+  }
+</style>

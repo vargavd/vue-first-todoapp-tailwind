@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import About from './components/About.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import TodoList from './components/TodoList.vue'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <TodoList />
   </main>
 </template>
 
