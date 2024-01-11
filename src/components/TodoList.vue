@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <div class="flex align-stretch mb-5" style="margin-left: -25px;">
+  <div class="flex align-stretch mb-5 ml-[-25px]">
     <input 
       v-model="newTodoText" 
       class="w-full rounded-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-400 focus-visible:outline-none"
@@ -92,10 +92,3 @@
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
   </TodoItem>
 </template>
-
-<style>
-  .add-todo {
-    display: flex;
-    margin: 20px 20px 20px -25px;
-  }
-</style>

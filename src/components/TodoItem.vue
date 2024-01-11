@@ -1,86 +1,12 @@
 <template>
-  <div class="item">
-    <i>
+  <div class="item flex relative lg:mt-0 lg:pt-2 lg:pb-1 lg:pl-[var(--todo-gap)] lg:mb-[calc(var(--todo-gap)*0.75)]">
+    <i class="flex place-items-center place-content-center w-2 h-2 lg:left-[-26px] lg:absolute lg:rounded-[8px] lg:w-[50px] lg:h-[50px] lg:top-[calc(50%-25px)] lg:border lg:border-solid lg:border-[var(--color-border)] lg:bg-[var(--color-background)] text-[var(--color-text)]">
       <slot name="icon"></slot>
     </i>
-    <div class="details">
-      <h3 class="font-bold">
+    <div class="details flex-1 ml-4">
+      <h3 class="text-xl font-medium text-[var(--color-heading)]">
         <slot name="heading"></slot>
       </h3>
     </div>
   </div>
 </template>
-
-<style scoped>
-.item {
-  margin-top: 2rem;
-  display: flex;
-  position: relative;
-}
-
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--color-heading);
-}
-
-@media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    padding: 0.4rem 0 0.4rem var(--todo-gap);
-    margin-bottom: calc(var(--todo-gap)*0.75);
-  }
-
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:first-of-type:before {
-    display: none;
-  }
-
-  .item:last-of-type:after {
-    display: none;
-  }
-}
-</style>

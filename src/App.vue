@@ -4,10 +4,16 @@ import TodoList from './components/TodoList.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <header class="leading-normal mt-0 mx-auto mb-8 lg:flex place-items-center lg:pr-[calc(var(--section-gap)/2)]">
+    <img 
+      alt="Vue logo" 
+      class="logo block my-0 ml-0 mr-8" 
+      src="./assets/logo.svg" 
+      width="125" 
+      height="125" 
+    />
 
-    <div class="wrapper">
+    <div class="wrapper flex place-items-center flex-wrap">
       <About msg="Todo App" />
     </div>
   </header>
@@ -17,31 +23,3 @@ import TodoList from './components/TodoList.vue'
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
